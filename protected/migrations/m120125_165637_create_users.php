@@ -2,8 +2,8 @@
 
 class m120125_165637_create_users extends CDbMigration
 {
-	public function up()
-	{
+   public function up()
+   {
       $this->createTable("tbl_user", array(
          'id'=>'pk',
          'username'=>'string not null unique',
@@ -25,23 +25,23 @@ class m120125_165637_create_users extends CDbMigration
       $u = new User;
       $u->username = "humbug"; $u->name = "Роман"; $u->email="asd@asd.re"; $u->password = "7815696ecbf1c96e6894b779456d330e";
       $u->save();
-	}
+   }
 
-	public function down()
-	{
+   public function down()
+   {
       $this->dropTable("tbl_user_profile");
-		$this->dropTable("tbl_user");
-		return true;
-	}
+      $this->dropTable("tbl_user");
+      return true;
+   }
 
-	/*
-	// Use safeUp/safeDown to do migration with transaction
-	public function safeUp()
-	{
-	}
+   /*
+   // Use safeUp/safeDown to do migration with transaction
+   public function safeUp()
+   {
+   }
 
-	public function safeDown()
-	{
-	}
-	*/
+   public function safeDown()
+   {
+   }
+   */
 }

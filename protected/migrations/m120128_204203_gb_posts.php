@@ -2,8 +2,8 @@
 
 class m120128_204203_gb_posts extends CDbMigration
 {
-	public function up()
-	{
+   public function up()
+   {
       $this->createTable("tbl_gb_post", array(
          'id' => 'pk',
          'nickname' => 'string',
@@ -33,23 +33,23 @@ class m120128_204203_gb_posts extends CDbMigration
       $a->gb_post_id = 2; "humbug"; $a->user_id = 1; $a->answer = "visit /register url!";
       $a->save();
 
-	}
+   }
 
-	public function down()
-	{
+   public function down()
+   {
       $this->dropTable("tbl_gb_answer");
-		$this->dropTable("tbl_gb_post");
-		return true;
-	}
+      $this->dropTable("tbl_gb_post");
+      return true;
+   }
 
-	/*
-	// Use safeUp/safeDown to do migration with transaction
-	public function safeUp()
-	{
-	}
+   /*
+   // Use safeUp/safeDown to do migration with transaction
+   public function safeUp()
+   {
+   }
 
-	public function safeDown()
-	{
-	}
-	*/
+   public function safeDown()
+   {
+   }
+   */
 }
