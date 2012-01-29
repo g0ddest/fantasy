@@ -12,7 +12,6 @@ return array(
    //'defaultController'=>'',
 	// preloading 'log' component
 	'preload'=>array('db', 'log'),
-
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
@@ -25,6 +24,8 @@ return array(
 		 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			//'ipFilters'=>array('127.0.0.1','::1'),
 		),
+      'gb','api',
+      
 	),
 
 	// application components
@@ -39,9 +40,9 @@ return array(
          'showScriptName' => false,
 			'urlFormat'=>'path',
 			'rules'=>array(
+				'api/gb/id/<id:\d+>'=>'api/gb/id',
 				'<controller:\w+>'=>'<controller>',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
