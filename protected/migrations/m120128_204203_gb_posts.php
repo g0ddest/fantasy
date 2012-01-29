@@ -22,11 +22,11 @@ class m120128_204203_gb_posts extends CDbMigration
       $this->addForeignKey('FK_gb_user', 'tbl_gb_answer', 'user_id', 'tbl_user', 'id', 'cascade', 'cascade');
 
       $g = new GbPost;
-      $g->id = 1; $g->nickname = "humbug"; $g->message = "hello world";
+      $g->id = 1; $g->nickname = "humbug"; $g->message = "hello world"; $g->email= "test@asd.re";
       $g->save();
 
       $g = new GbPost;
-      $g->id = 2; $g->nickname = "newbie"; $g->message = "how can i register?";
+      $g->id = 2; $g->nickname = "newbie"; $g->message = "how can i register?"; $g->email= "asd@asd.re";
       $g->save();
 
       $a = new GbAnswer;

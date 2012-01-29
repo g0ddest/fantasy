@@ -8,7 +8,8 @@ class GbPost extends CActiveRecord
    {
       return array(
          array('nickname, email', 'length', 'max'=>255),
-         array('message', 'safe'),
+         array('email', 'email'),
+         array('message, email', 'required'),
       );
    }
 
