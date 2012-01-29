@@ -40,7 +40,9 @@ return array(
          'showScriptName' => false,
          'urlFormat'=>'path',
          'rules'=>array(
-            'api/gb/id/<id:\d+>'=>'api/gb/id',
+            array('api/gb/view', 'pattern'=>'api/gb/id<id:\d+>', 'verb'=>'GET'),
+            array('api/gb/delete', 'pattern'=>'api/gb/id<id:\d+>', 'verb'=>'DELETE'),
+            array('api/gb/create', 'pattern'=>'api/gb/', 'verb'=>'POST'),
             '<controller:\w+>'=>'<controller>',
             '<controller:\w+>/<id:\d+>'=>'<controller>/view',
             '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
