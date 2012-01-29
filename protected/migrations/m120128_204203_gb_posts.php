@@ -20,6 +20,19 @@ class m120128_204203_gb_posts extends CDbMigration
 
       $this->addForeignKey('FK_gb_answer', 'tbl_gb_answer', 'gb_post_id', 'tbl_gb_post', 'id', 'cascade', 'cascade');
       $this->addForeignKey('FK_gb_user', 'tbl_gb_answer', 'user_id', 'tbl_user', 'id', 'cascade', 'cascade');
+
+      $g = new GbPost;
+      $g->id = 1; $g->nickname = "humbug"; $g->message = "hello world";
+      $g->save();
+
+      $g = new GbPost;
+      $g->id = 2; $g->nickname = "newbie"; $g->message = "how can i register?";
+      $g->save();
+
+      $a = new GbAnswer;
+      $a->gb_post_id = 2; "humbug"; $a->user_id = 1; $a->answer = "visit /register url!";
+      $a->save();
+
 	}
 
 	public function down()

@@ -30,6 +30,20 @@ class User extends CActiveRecord
 	{
 		return array( 'userProfile' => array(self::HAS_ONE, 'UserProfile', 'user_id'), );
 	}
+   public function defaultScope()
+   {
+      return array(
+         'select'=>'id, username, name',
+      );
+   }
+   public function scopes()
+   {
+      return array(
+         'private_data'=>array(
+            'select'=>'password, email',
+         ),
+      );
+   }
 
 	public function attributeLabels()
 	{

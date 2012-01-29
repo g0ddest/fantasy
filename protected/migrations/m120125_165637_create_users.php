@@ -21,6 +21,10 @@ class m120125_165637_create_users extends CDbMigration
       ), 'ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci');
 
       $this->addForeignKey('FK_user_profile', 'tbl_user_profile', 'user_id', 'tbl_user', 'id', 'cascade', 'cascade');
+
+      $u = new User;
+      $u->username = "humbug"; $u->name = "Роман"; $u->email="asd@asd.re"; $u->password = "7815696ecbf1c96e6894b779456d330e";
+      $u->save();
 	}
 
 	public function down()
