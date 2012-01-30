@@ -67,7 +67,7 @@ return array(
           'class'=>'CLogRouter',
           'enabled'=>YII_DEBUG,
           'routes'=>array(
-              array( 'class'=>'application.extensions.yii-debug-toolbar.YiiDebugToolbarRoute', ),
+              array( 'class'=>'application.extensions.yii-debug-toolbar.yii-debug-toolbar.YiiDebugToolbarRoute', ),
           ),
       ),
    ),
