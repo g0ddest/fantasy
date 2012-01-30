@@ -15,6 +15,7 @@ return array(
    'import'=>array(
       'application.models.*',
       'application.components.*',
+      'ext.mtHeader.*',
    ),
 
    'modules'=>array(
@@ -42,7 +43,8 @@ return array(
          'rules'=>array(
             array('api/gb/view', 'pattern'=>'api/gb/id<id:\d+>', 'verb'=>'GET'),
             array('api/gb/delete', 'pattern'=>'api/gb/id<id:\d+>', 'verb'=>'DELETE'),
-            array('api/gb/create', 'pattern'=>'api/gb/', 'verb'=>'POST'),
+            array('api/gb/create', 'pattern'=>'api/gb/', 'verb'=>'POST, PUT'),
+            array('api/gb/update', 'pattern'=>'api/gb/id<id:\d+>', 'verb'=>'PUT'),
             '<controller:\w+>'=>'<controller>',
             '<controller:\w+>/<id:\d+>'=>'<controller>/view',
             '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
